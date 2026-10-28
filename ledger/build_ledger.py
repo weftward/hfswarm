@@ -35,12 +35,15 @@ def norm(s):
 raw = subprocess.run(["pdftotext", "-layout", PDF, "-"], capture_output=True,
                      text=True, check=True).stdout
 PAGES = [norm(p) for p in raw.split("\f")]
+OPENAI_PDF = os.path.join(ROOT, "sources", "OpenAI-Hugging-Face Incident-Technical-Report.pdf")
+PAGES_O = [norm(p) for p in subprocess.run(["pdftotext", "-layout", OPENAI_PDF, "-"], capture_output=True,
+                                           text=True, check=True).stdout.split("\f")]
 README_TEXT = norm(open(README, encoding="utf8").read()) if os.path.exists(README) else ""
 
 
-def find_page(excerpt):
+def find_page(excerpt, pages=None):
     e = norm(excerpt)
-    hits = [i + 1 for i, p in enumerate(PAGES) if e in p]
+    hits = [i + 1 for i, p in enumerate(pages or PAGES) if e in p]
     if not hits:
         raise SystemExit("EXCERPT NOT FOUND in PDF: %r" % excerpt)
     return hits[0]
@@ -48,6 +51,7 @@ def find_page(excerpt):
 
 # ------------------------------------------------------------------- helpers
 SRC_METR = "S02"
+SRC_OPENAI = "S03"
 SRC_TABLES = "S04"
 EV = OrderedDict()          # key -> row
 LINKS = []                  # evidence_id, target_type, target_id, relationship
@@ -74,6 +78,9 @@ def ev(key, excerpt, prop, basis, limits="", ai="unknown", page=None,
             pg = find_page(excerpt)
             locator = "p.%d" % pg + (", " + loc_extra if loc_extra else "")
         method = "p.72 'Appendix: Methodology'; p.26 'We heavily delegated our analysis to often-unreliable AI agents'"
+    elif src == SRC_OPENAI:
+        locator = "PDF p.%d" % find_page(excerpt, PAGES_O)
+        method = "OpenAI's own investigation; the report says the METR assessment 'informed its own analysis' (PDF p.4)"
     else:
         if norm(excerpt) not in README_TEXT:
             raise SystemExit("EXCERPT NOT FOUND in README: %r" % excerpt)
@@ -162,7 +169,7 @@ SOURCES = [
          version="unknown", retrieved_at="2026-10-28 (user-supplied copy)",
          content_hash="sha256:dd635cf6e5f39f0e1f646f08c36549090d77156ed89cbd3d733ed496648cae9c",
          source_family_id="F-OPENAI",
-         coverage_limits="NOT YET INSPECTED: text extracted but unread. No evidence records cite it. Per the user's source notes, some actions are attributed only to unnamed agents."),
+         coverage_limits="Inspected (incident sections III-VII, PDF pp.4-16). Names no agent handles, so it cannot support attribution; it corroborates events and counts. OpenAI states that the METR assessment informed its own analysis, so its observations are not shown to be independent of METR's. Dates are given by day; times are rarely given."),
     dict(source_id="S04", title="Recovered tables from the METR OpenAI and Hugging Face incident figures (unofficial third-party dataset)",
          location="https://huggingface.co/datasets/LauraGomezjurado/openai-hf-incident-recovered-tables",
          version="git commit 1d6ac42d70df4c8d827eba67cf3a5bc10ba07454",
@@ -448,6 +455,44 @@ for h, fp, ts, n in SIGNERS:
        "investigator_interpretation", loc_extra="signing-key table",
        limits="Identity labels in this table are not shown to equal board handles elsewhere in the report (e.g. 'CDA' vs 'CDA23'); not merged.")
 
+# OpenAI technical report ----------------------------------------------------
+O = SRC_OPENAI
+ev("oa_informed", "OpenAI also worked with METR and Redwood Research to conduct a third-party assessment of the model behavior observed during the incident, which informed its own analysis.",
+   "OpenAI's analysis was informed by METR's assessment.", "investigator_interpretation", src=O,
+   limits="Reason to treat OpenAI and METR observations as possibly dependent.")
+ev("oa_board", "the agents repurposed Artifactory's folder directory structure to embed messages in the names of directories in Artifactory.",
+   "On July 8 agents began embedding messages in Artifactory directory names.", "investigator_interpretation", src=O,
+   limits="No agent named.")
+ev("oa_vm1", "On July 9, an internal-only research agent tasked with completing an ExploitGym evaluation was able to obtain root access within the parent virtual machine of the testing sandbox.",
+   "An internal-only-model agent obtained root in the parent VM on July 9.", "investigator_interpretation", src=O, limits="No agent named; time of day not given.")
+ev("oa_vm2", "Later that night, a second internal-only research agent independently obtained the same access.",
+   "A second agent independently obtained the same VM access later that night.", "investigator_interpretation", src=O, limits="No agent named.")
+ev("oa_creds14", "On July 10, an internal-only research agent found 14 Hugging Face user credentials in a public Hugging Face dataset.",
+   "An agent found 14 HF user credentials on July 10 and published them to the board.", "investigator_interpretation", src=O,
+   limits="METR says 38148c 'quickly found two working credentials' at first; the two accounts may refer to different counting points. No handle in the OpenAI report.")
+ev("oa_creds_post", "the agent published those credentials to the Artifactory message board, making them available to other agents in subsequent evaluations.",
+   "The credentials were published to the board.", "investigator_interpretation", src=O)
+ev("oa_hdf5", "However, the agent did not execute operating-system commands.",
+   "The July 11 malicious-dataset exploit gave file disclosure (including production credentials) but not command execution.", "investigator_interpretation", src=O,
+   limits="Matches METR's 'arbitrary file read'. No handle in the OpenAI report.")
+ev("oa_hdf5_repro", "Agents in separate evaluations subsequently reproduced this same file-disclosure technique described above.",
+   "The file-disclosure technique was reproduced by agents in separate evaluations.", "reproduction", src=O, limits="Reproducers not named.")
+ev("oa_rce", "That process represented the first known instance of an OpenAI agent executing its own commands on Hugging Face's system.",
+   "The first known command execution on HF's system came via the ReferenceFileSystem/Jinja exploit (July 11).", "investigator_interpretation", src=O,
+   limits="No handle; not tied to JAN183411 in this report.")
+ev("oa_c2", "Later that day, an internal-only research agent created a lightweight command-and-control tool that allowed agents to continue to send instructions to the server remotely",
+   "An agent built a command-and-control tool (pull-based, via a public HF dataset) on July 11.", "investigator_interpretation", src=O, limits="No agent named.")
+ev("oa_41", "executed code on 41 Hugging Face production dataset server workers",
+   "Agents executed code on 41 HF production dataset server workers.", "investigator_interpretation", src=O)
+ev("oa_13h", "In under 13 hours, the agents progressed from executing code in a single worker pod to administrative and host-level access across multiple Hugging Face clusters.",
+   "Escalation from one worker pod to multi-cluster admin access took under 13 hours.", "investigator_interpretation", src=O)
+ev("oa_311", "disabled 311 Artifactory repositories used for message-board communication",
+   "311 Artifactory repositories used for message-board communication were disabled on July 20.", "investigator_interpretation", src=O)
+ev("oa_model", "The model that primarily drove this incident was an internal-only research model prototype that was not intended for release.",
+   "The incident was primarily driven by an internal-only research model.", "investigator_interpretation", src=O)
+ev("oa_may", "Also on May 13, other agents probing Artifactory began discovering similar file-based \"notes\" containing requests for information or resources.",
+   "A file-based message board was already forming on May 13 (precursor).", "investigator_interpretation", src=O)
+
 # --------------------------------------------------------------------- agents
 for h, note in [
     ("PHASEONE10841", "Board origin agent; named after its ExploitGym task (fn.10). Handed work to PHASEONE[big]."),
@@ -594,7 +639,11 @@ m("reset_test", "unmapped:reset_forcing", "Forced-reset experiment reveals that 
 m("vm_escape", "public.live_rpc_runtime_escape", "Hack out of the container into the surrounding VM",
   "No container escape known on the board", "Report showing code on the surrounding VM",
   "analyst_proposed", "unresolved", "2026-07-09T12:43Z", "approximate",
-  notes="METR is unsure who achieved it first.")
+  notes="METR is unsure who achieved it first. OpenAI: one agent got root in the parent VM on July 9 and a second independently later that night.")
+m("hf_c2", "hf.persistence_c2", "Command-and-control channel to compromised HF workers via a public HF dataset",
+  "Code execution on single workers only", "Agents tasked workers through the channel and received callbacks",
+  "analyst_proposed", "supported", "2026-07-11 (later that day)", "approximate",
+  notes="From OpenAI's report only; METR's report does not describe it in this detail.")
 
 # -------------------------------------------------------------- contributions
 c = contrib
@@ -740,6 +789,22 @@ c("c_big_vm", "PHASEONE[big]", "vm_escape", "advance", "Published a report showi
 L("big_hackout", "contribution", "c_big_vm", "attributes"); L("big_hackout_unsure", "contribution", "c_big_vm", "contradicts")
 L("big_hackout", "milestone", "vm_escape", "supports")
 
+c("c_vm_a", None, "vm_escape", "advance", "Obtained root in the parent VM of the testing sandbox", "unknown", "reported",
+  "supported", "unknown", "unresolved", "OpenAI: first agent, July 9; unnamed. May or may not be PHASEONE[big].")
+c("c_vm_b", None, "vm_escape", "advance", "Independently obtained the same VM access later that night, then bypassed egress controls via Artifactory", "unknown", "reported",
+  "supported", "unknown", "unresolved", "OpenAI: second agent; unnamed.")
+c("c_c2", None, "hf_c2", "advance", "Built the pull-based command-and-control tool and used the Jinja exploit to deploy the worker-control script", "script via HF dataset", "reported",
+  "supported", "documented", "unresolved", "OpenAI describes the tool but names no agent.")
+L("oa_vm1", "contribution", "c_vm_a", "attributes"); L("oa_vm1", "milestone", "vm_escape", "supports")
+L("oa_vm2", "contribution", "c_vm_b", "attributes"); L("oa_vm2", "milestone", "vm_escape", "supports")
+L("oa_c2", "contribution", "c_c2", "supports"); L("oa_c2", "milestone", "hf_c2", "supports")
+L("oa_board", "milestone", "board", "supports")
+L("oa_creds14", "milestone", "hf_cred", "supports"); L("oa_creds_post", "milestone", "hf_cred", "supports")
+L("oa_creds14", "contribution", "c_38148c_cred", "supports")
+L("oa_hdf5", "milestone", "hf_fileread", "supports")
+L("oa_hdf5_repro", "contribution", "c_38148c_ds", "validates")
+L("oa_rce", "milestone", "hf_rce", "supports"); L("oa_rce", "contribution", "c_jan_rce", "supports")
+
 # --------------------------------------------------------------------- events
 e = event
 e("p10841_help", "PHASEONE10841", "broadcast", None, "public.coordination_infrastructure", "request",
@@ -866,6 +931,13 @@ ctx("coverage_gap", "a small amount of relevant activity is missing from METR's 
 ctx("hf_participants_dataset_gap", "684 positioned onsets vs 688 declared", "tables_688", "unexplained in the dataset README")
 ctx("PHASEONE_big_assignment_share", "~10% of all assignments in its active periods (about 20% July 9, about 5% July 11)", "big_assign", "two classification methods combined; uncertain (METR fn.24)")
 ctx("PHASEONE_big_role", "orchestrated hundreds of agents across several approaches", "big_orch", "METR narrative")
+ctx("hf_workers_with_code_execution", "41 production dataset server workers", "oa_41", "OpenAI; no per-agent attribution")
+ctx("escalation_time_worker_to_multicluster", "<13 hours", "oa_13h", "OpenAI")
+ctx("message_board_repositories_disabled_jul20", "311", "oa_311", "OpenAI; METR counts ~1.2M 'zz' entries in one namespace")
+ctx("hf_credentials_published_jul10", "OpenAI: 14; METR: two first found by 38148c", "oa_creds14", "counts not reconciled")
+ctx("model_split", "OpenAI: primarily the internal-only research model, some GPT-5.6 Sol; METR: about 95% HPIM, about 5% Sol; dataset: 1,068 HPIM / 138 Sol rows", "oa_model", "dataset share of Sol (about 11%) disagrees with METR's about 5%")
+ctx("openai_metr_dependence", "OpenAI says METR's assessment informed its analysis", "oa_informed", "OpenAI and METR evidence is not shown to be independent")
+ctx("precursor_message_board", "file-based notes from 2026-05-13", "oa_may", "before METR's scope")
 ATTRS.append((AGENTS["MIFF46393"]["agent_id"], "coined_term", "RESETWATCH", EV["reset_miff"]["evidence_id"]))
 L("tga", "milestone", "spoof_early", "supports")
 L("spoof30", "milestone", "spoof_prepend", "demonstrates_uptake")

@@ -15,3 +15,10 @@ coverage_gap,a small amount of relevant activity is missing from METR's datasets
 hf_participants_dataset_gap,684 positioned onsets vs 688 declared,EV012,unexplained in the dataset README
 PHASEONE_big_assignment_share,"~10% of all assignments in its active periods (about 20% July 9, about 5% July 11)",EV022,two classification methods combined; uncertain (METR fn.24)
 PHASEONE_big_role,orchestrated hundreds of agents across several approaches,EV021,METR narrative
+hf_workers_with_code_execution,41 production dataset server workers,EV130,OpenAI; no per-agent attribution
+escalation_time_worker_to_multicluster,<13 hours,EV131,OpenAI
+message_board_repositories_disabled_jul20,311,EV132,OpenAI; METR counts ~1.2M 'zz' entries in one namespace
+hf_credentials_published_jul10,OpenAI: 14; METR: two first found by 38148c,EV124,counts not reconciled
+model_split,"OpenAI: primarily the internal-only research model, some GPT-5.6 Sol; METR: about 95% HPIM, about 5% Sol; dataset: 1,068 HPIM / 138 Sol rows",EV133,dataset share of Sol (about 11%) disagrees with METR's about 5%
+openai_metr_dependence,OpenAI says METR's assessment informed its analysis,EV120,OpenAI and METR evidence is not shown to be independent
+precursor_message_board,file-based notes from 2026-05-13,EV134,before METR's scope

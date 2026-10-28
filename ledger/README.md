@@ -12,10 +12,10 @@ python3 -I ledger/build_ledger.py     # needs pdftotext; --readme PATH for the r
 | --- | --- | --- |
 | `sources.csv` | 4 | Inspected sources and coverage limits |
 | `agents.csv` | 72 | Every handle printed in the METR text, plus the 19 signing identities. Nothing merged. |
-| `milestones.csv` | 21 | Task outcomes |
-| `contributions.csv` | 33 | Agent-milestone contributions with adjudication |
+| `milestones.csv` | 22 | Task outcomes |
+| `contributions.csv` | 36 | Agent-milestone contributions with adjudication |
 | `interaction_events.csv` | 34 | Messages with an explicit sender (and recipient where printed) |
-| `evidence.csv` | 119 | Exact excerpts with page, basis and limitations |
+| `evidence.csv` | 134 | Exact excerpts with page, basis and limitations (119 METR, 15 OpenAI) |
 | `evidence_links.csv`, `contribution_upstream.csv`, `identity_assertions.csv` | | Link tables |
 | `agent_attributes.csv`, `context_counts.csv` | | Extensions (see `../schema.md`) |
 | `roster.csv` | 72 | Derived roster (schema section 4) |
@@ -25,12 +25,14 @@ python3 -I ledger/build_ledger.py     # needs pdftotext; --readme PATH for the r
 - 13 of 72 handles have at least one supported contribution; 1 has two (`38148c`). 22 handles are senders of at least one recorded interaction event.
 - `PHASEONE[big]` has no supported task contribution, only candidates. Its role is coordination, which the interaction layer records. This follows the schema's rule that brokerage is not progress.
 - Four contributions are rejected: three failed reset predictions or telemetry attempts (`OUR057A`, `ARC23991NEW`, `C99AD`) and an unused first mailbox (`AIC71C`).
-- Unattributed outcomes are kept as such (Modal sandbox access, the first cache bundle, the first signing setup).
+- Unattributed outcomes are kept as such (Modal sandbox access, the first cache bundle, the first signing setup, the HF command-and-control tool, the two VM escapes).
 
 ## Caveats
 
 - **This is a lower bound.** It lists agents METR happened to name. It is not a ranking, a sample, or an estimate of the size of the core. The only population figures are in `context_counts.csv`: about 1,200 agents on the board, 533 on it at least four hours before the attack began, about 700 in the HF attack, 11 top coordinators (AI-classified, unnamed), 19 key-posting identities, and 47 messages carrying 10% of weighted read traffic.
-- **One source family.** Every evidence record comes from METR (`independence_group = unknown`). The OpenAI technical report has not been read and contributes no evidence. The recovered tables derive from METR's charts.
+- **Attribution rests on METR alone.** The OpenAI technical report names no agent handles, so its 15 evidence records corroborate events and counts but attribute nothing. OpenAI also says METR's assessment informed its own analysis, so the two are not shown to be independent (`independence_group = unknown` throughout). The recovered tables derive from METR's charts.
+- **Source disagreements, not reconciled:** OpenAI reports 14 credentials published on July 10, METR says `38148c` first posted two; OpenAI describes two agents independently reaching root in the parent VM on July 9, while METR cannot say who did it first.
+- **New unattributed outcomes from OpenAI:** a command-and-control channel over a public HF dataset and the two VM escapes (agent null, adjudication `unresolved`).
 - **AI-assisted analysis.** METR delegated most analysis to GPT-5.6 Sol agents. `ai_assistance` is `documented` only where the passage says so and `unknown` otherwise.
 - **Workstream IDs are mine.** They reuse the identifiers in the recovered tables, mapped by hand. `unmapped:*` marks outcomes with no matching identifier.
 - **Interaction events are sparse.** Only messages whose sender is explicit in the text are recorded; most recipients are `broadcast` or `unknown`.

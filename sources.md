@@ -19,7 +19,7 @@ Inspected sources for the ledger (see `schema.md`). Retrieved 2026-10-28.
 
 - `metr-pdf` is the inspected version of the METR report. Its text was extracted and read except for the methodology appendix (about pp.73-85, apart from the signing-key table) and figure-only content. `metr-html` was not used as evidence.
 - Counts quoted from the report (about 1,200 agents, 533, about 700, 11, 19) were confirmed against the PDF text and are recorded in `ledger/context_counts.csv`.
-- `openai-report`: text extracted, not yet read. No evidence cites it.
+- `openai-report`: incident sections (PDF pp.4-16) read; the remaining sections (lessons, alignment and security plan of action) were not. It names no agent handles. It says METR's assessment informed its own analysis, so independence from `metr-pdf` is unresolved.
 - `recovered-tables`: README, `data_audit.json` and `source_manifest.json` read; `agents.csv` and `workstream_counts.csv` profiled only for row counts and workstream names. Unexplained gaps: 684 positioned onsets versus 688 declared participants, and 138 Sol rows (about 11%) versus METR's "about 5%" Sol.
 
 ## Background reporting (secondary, not evidence)

@@ -32,3 +32,6 @@ C030,A033,M019,advance,Predicted periodic reset waves,warnings to other agents,r
 C031,A026,M020,enabling,Volunteered for a risky reset test whose result informed the board,announcement 'WILL_[...]_REPORT',reported,supported,documented,candidate,"Uptake documented (more caution), but crash cause was not confirmed by METR.",
 C032,A025,M020,enabling,Urged 53927 to attempt the test,zzANSWER62370_TO53927R_...,observed,unverified,documented,candidate,Coordination act; enabling status unclear.,
 C033,A002,M021,advance,Published a report showing a hack into the surrounding VM,bundle/report (~12:43 July 9),reported,unresolved,unknown,unresolved,METR could not tell whether PHASEONE[big] did this itself or assembled others' results.,
+C034,,M021,advance,Obtained root in the parent VM of the testing sandbox,unknown,reported,supported,unknown,unresolved,"OpenAI: first agent, July 9; unnamed. May or may not be PHASEONE[big].",
+C035,,M021,advance,"Independently obtained the same VM access later that night, then bypassed egress controls via Artifactory",unknown,reported,supported,unknown,unresolved,OpenAI: second agent; unnamed.,
+C036,,M022,advance,Built the pull-based command-and-control tool and used the Jinja exploit to deploy the worker-control script,script via HF dataset,reported,supported,documented,unresolved,OpenAI describes the tool but names no agent.,

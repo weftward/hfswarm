@@ -1,0 +1,73 @@
+agent_id,observed_handle,supported_by_type,n_supported,n_milestones,workstreams,candidate_or_unresolved,rejected,events_as_sender,recipient_scopes,identity_status,caveats
+A005,38148c,"advance: C012,C013",2,2,hf.accounts_tokens;hf.dataset_viewer_file_read,,,1,broadcast=1,established,
+A001,PHASEONE10841,advance: C001,1,1,public.coordination_infrastructure,"C011,C018",,4,agent=2;broadcast=2,established,
+A008,JAN183411,advance: C015,1,1,hf.worker_rce_exfiltration,,,1,unknown=1,established,
+A011,GSTX[big],advance: C017,1,1,public.live_rpc_runtime_escape,,,1,agent=1,established,
+A035,23619E,advance: C026,1,1,public.coordination_infrastructure,,,1,broadcast=1,established,
+A003,c03220,enabling: C002,1,1,eval.public_seed_hmac_shortcut,,,0,,established,
+A004,V8SAME,advance: C003,1,1,eval.public_seed_hmac_shortcut,,,0,,established,
+A012,DAVJUL7,advance: C021,1,1,public.live_rpc_runtime_escape,,,0,,established,
+A013,LLDPC756D,advance: C020,1,1,public.live_rpc_runtime_escape,,,0,,established,
+A014,KAM1196A,advance: C022,1,1,public.live_rpc_runtime_escape,,,0,,established,
+A016,URI23816B,advance: C007,1,1,public.scorer_reverse_engineering,,,0,,established,
+A018,49903,enabling: C006,1,1,public.scorer_reverse_engineering,,,0,,established,
+A032,NEWSIG,advance: C027,1,1,unmapped:reset_telemetry,,,0,,established,
+A002,PHASEONE[big],,0,0,,"C008,C033",,10,agent=9;unknown=1,established,no supported contribution
+A006,CURRENT,,0,0,,C014,,1,broadcast=1,established,no supported contribution
+A007,MARB051,,0,0,,,,1,broadcast=1,established,no supported contribution
+A009,LILY,,0,0,,,,1,unknown=1,established,no supported contribution
+A010,DUPB,,0,0,,,,1,agent=1,established,no supported contribution
+A015,ARVO36861B,,0,0,,,,1,agent=1,established,no supported contribution
+A025,62370,,0,0,,C032,,1,agent=1,established,no supported contribution
+A029,OUR057A,,0,0,,,C029,1,unknown=1,established,no supported contribution
+A034,AIC71C,,0,0,,,C025,1,unknown=1,established,no supported contribution
+A036,23619B,,0,0,,,,1,agent=1,established,no supported contribution
+A038,CDA23,,0,0,,C023,,1,broadcast=1,established,no supported contribution
+A039,V8REG_OS1608,,0,0,,,,1,agent=1,established,no supported contribution
+A041,9180,,0,0,,,,1,agent=1,established,no supported contribution
+A042,LIBRAW42535,,0,0,,,,1,agent=1,established,no supported contribution
+A043,JANFE78,,0,0,,,,1,agent=1,established,no supported contribution
+A048,ARVO66040,,0,0,,,,1,broadcast=1,established,no supported contribution
+A053,38148C,,0,0,,,,1,unknown=1,ambiguous,identity ambiguous; no supported contribution
+A017,EARLY[big],,0,0,,C009,,0,,established,no supported contribution
+A019,33340B,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A020,33340C[big],,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A021,38952C,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A022,OUR50414,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A023,36861,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A024,10147,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A026,53927,,0,0,,C031,,0,,established,no supported contribution
+A027,60432A,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A028,MIFF46393,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A030,US58,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A031,C99AD,,0,0,,,C028,0,,established,no supported contribution
+A033,ARC23991NEW,,0,0,,,C030,0,,established,no supported contribution
+A037,23619F,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A040,V8BIGINT392B,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A044,FEBFE78B,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A045,CAP8727NEW,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A046,51757,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A047,TGA14565NEW,,0,0,,C016,,0,,established,no supported contribution
+A049,C5DFB,,0,0,,C019,,0,,established,no supported contribution
+A050,3FR[big]B,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A051,H3BLOSC,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A052,CURR25167X,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A054,FreshX,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A055,CDA,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A056,APR05,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A057,APR25,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A058,FLAC117,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A059,MAR6FE78,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A060,LD62943C,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A061,20494D,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A062,OURBOT195,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A063,CURRENT4a239,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A064,KVXD3,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A065,STR11173,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A066,B12,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A067,NEW4a,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A068,CYBERMINIZD8,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A069,FRESHX,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A070,OURC817C,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.
+A071,NEWLD62943E,,0,0,,,,0,,ambiguous,No supported contribution or interaction event in this ledger version.
+A072,DEC30C159,,0,0,,,,0,,established,No supported contribution or interaction event in this ledger version.

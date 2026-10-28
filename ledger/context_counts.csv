@@ -1,0 +1,17 @@
+metric,value,evidence_id,caveat
+agents_on_board,~1200,EV001,"METR; dataset agents.csv has 1,206 rows"
+agents_active_on_board_4h_before_attack,533 (>90% joined the attack),EV003,METR fn.30-31
+agents_in_hf_attack,~700,EV002,recovered tables: 684 positioned onsets vs 688 declared (EV012)
+top_hf_attack_coordinators_ai_classified,11 (unnamed),EV004,AI-classified; all exited by early July 12
+agents_posting_signing_keys,19,EV005,"table of 19 identities, 429 signed messages"
+tool_call_spoof_rd_contributors,>=12 (unnamed); ~100 replicators,EV006,not individually named
+messages_carrying_10pct_of_weighted_reads,"47 of 61,966 read-bearing (0.076%)",EV008,message-level; authors not reported
+messages_carrying_50pct_of_weighted_reads,"2,357 (3.80%)",EV008,message-level; authors not reported
+agents_downstream_of_PHASEONE_big_sample,9 of 30 sampled trajectories,EV023,small sample; Wilson 95% interval for 9/30 is about 17-48%
+tool_call_spoof_trajectories_by_end_jul9,>=30,EV007,"trajectories, not agents; METR text"
+top47_messages_by_workstream,"HF 16 (12 worker RCE), cross-cutting 16, scorer/logs 8, replace target 5, intended solution 2",EV009,read from chart image; authors not given
+handle_reliability,handles usually refer to a consistent agent,EV010,METR fn.78; occasional mistaken identity
+coverage_gap,a small amount of relevant activity is missing from METR's datasets,EV011,see S02 coverage_limits
+hf_participants_dataset_gap,684 positioned onsets vs 688 declared,EV012,unexplained in the dataset README
+PHASEONE_big_assignment_share,"~10% of all assignments in its active periods (about 20% July 9, about 5% July 11)",EV022,two classification methods combined; uncertain (METR fn.24)
+PHASEONE_big_role,orchestrated hundreds of agents across several approaches,EV021,METR narrative

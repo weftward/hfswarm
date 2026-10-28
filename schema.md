@@ -58,7 +58,7 @@ One row per distinct task outcome.
 | criterion_origin | `predefined`, `source_stated`, or `analyst_proposed` |
 | validation_status | `unverified`, `supported`, `contradicted`, or `unresolved` |
 | time_value | Recorded time or interval, or empty |
-| time_precision | `exact`, `interval`, `ordering_only`, or `unknown` |
+| time_precision | `exact`, `interval`, `approximate`, `ordering_only`, or `unknown` |
 
 ### Contributions (task layer)
 
@@ -128,6 +128,15 @@ Each link carries a `relationship`.
 | identity_assertions | evidence that a handle merges with, or is distinct from, another | `same_as`, `distinct_from` |
 
 Conflicting evidence is representable as a `contradicts` link, not just as a note.
+
+### Extensions used by the CSVs in `ledger/` (v0.2.1)
+
+- `time_precision` gains `approximate`: a point time that METR reconstructed or reported as "around". METR says its timestamps may have small errors.
+- `notes` column on agents, milestones, contributions and interaction events.
+- `evidence_links` stores its target as `kind:id` (for example `contribution:C012`).
+- `agent_attributes` (agent, attribute, value, evidence): per-agent facts that are not contributions, such as the signing-key table.
+- `context_counts` (metric, value, evidence, caveat): population figures that cannot be tied to individual agents.
+- `roster.csv` is derived by `ledger/build_ledger.py` according to section 4.
 
 ## 2. Admission rules
 

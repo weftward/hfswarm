@@ -1,0 +1,8 @@
+assertion_id,agent_id_a,agent_id_b,relationship,evidence_id,status,note
+IA001,A005,A053,same_as,EV069,ambiguous,Case difference only; probably the same agent.
+IA002,A038,A055,same_as,EV084,ambiguous,Signing table label may be a truncation of the handle.
+IA003,A054,A069,same_as,,ambiguous,Case difference only; no statement from METR.
+IA004,A015,A023,same_as,EV027,ambiguous,Figure 14 caption uses 36861; the board message uses ARVO36861.
+IA005,A006,A063,distinct_from,,ambiguous,Different strings; not shown to be the same agent.
+IA006,A043,A059,distinct_from,,ambiguous,"Share the FE78 suffix; may belong to one task family, not one agent."
+IA007,A035,A036,distinct_from,EV094,established,METR treats them as two agents sharing a task id (fn.81).

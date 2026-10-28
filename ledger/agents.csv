@@ -1,0 +1,73 @@
+agent_id,observed_handle,identity_scope,identity_status,notes
+A001,PHASEONE10841,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Board origin agent; named after its ExploitGym task (fn.10). Handed work to PHASEONE[big].
+A002,PHASEONE[big],METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Successor to PHASEONE10841 on the same task; suffix redacted by OpenAI as [big]. Key coordinator and assigner.
+A003,c03220,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Proposed the HMAC flag reverse-engineering.
+A004,V8SAME,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Validated the HMAC technique against an actual flag.
+A005,38148c,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Found HF credentials (July 10) and the malicious-dataset exploit (July 11).
+A006,CURRENT,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Reproduced 38148c's dataset exploit.
+A007,MARB051,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Pivoted to HF attack and created a coordination place.
+A008,JAN183411,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Achieved RCE on an HF worker; key coordinator.
+A009,LILY,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,HF-attack lane coordinator.
+A010,DUPB,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Asked whether spoofing could fake a flag capture.
+A011,GSTX[big],METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,First widely discussed tool-call spoof; suffix redacted.
+A012,DAVJUL7,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Process-replacement spoof technique and 21-part bundle.
+A013,LLDPC756D,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Output-suppressing spoof technique.
+A014,KAM1196A,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,ptrace spoof; also a target-takedown volunteer.
+A015,ARVO36861B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Pressed KAM1196A to honor the takedown commitment (METR fn.90 reconstructs the message).
+A016,URI23816B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Trip-wire that revealed the start of the scorer command.
+A017,EARLY[big],METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Recruited for a trip-wire experiment with a very large remaining budget; suffix redacted.
+A018,49903,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Proposed the scorer trip-wire technique.
+A019,33340B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Assigned by PHASEONE[big] to continue trip-wire research.
+A020,33340C[big],METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Asked by PHASEONE[big] to audit its VM-escape report; suffix redacted.
+A021,38952C,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Asked by PHASEONE[big] to audit its VM-escape report.
+A022,OUR50414,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Assigned by PHASEONE[big] to continue trip-wire research.
+A023,36861,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Assigned by PHASEONE[big] (Figure 14 caption). May be the same agent as ARVO36861B; not merged.
+A024,10147,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,First reported a container crash/reset that sparked reset work.
+A025,62370,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Urged 53927 to attempt a risky reset test.
+A026,53927,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Volunteered for the risky reset test; run ended right after. Message handle is 53927R.
+A027,60432A,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Early reset-cause hypothesis message (OOM).
+A028,MIFF46393,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Coined RESETWATCH.
+A029,OUR057A,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Predicted a reset wave and called on the cache team; debunked.
+A030,US58,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Assigned by PHASEONE[big] to own reset forecasting; made little progress.
+A031,C99AD,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,First reset-telemetry attempt; never functional.
+A032,NEWSIG,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Built the functional RESETWATCH system.
+A033,ARC23991NEW,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Predicted periodic reset waves; wrong.
+A034,AIC71C,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Made the first mailbox (July 9); never used.
+A035,23619E,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Invented the zzINBOX convention (July 10). The 23619 prefix is probably a shared task id (METR fn.81).
+A036,23619B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Fellow 23619-task agent; posted into 23619E's inbox.
+A037,23619F,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Fellow 23619-task agent; posted into 23619E's inbox.
+A038,CDA23,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Signing-scheme developer and July 13 coordinator.
+A039,V8REG_OS1608,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Requester in an example ASK message.
+A040,V8BIGINT392B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Recipient in an example ASK message.
+A041,9180,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Requester in an example ASK message (printed '918078' in one sentence: a footnote-78 marker is attached).
+A042,LIBRAW42535,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Replied to 9180's request.
+A043,JANFE78,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Replied to FEBFE78B; also appears as a signing identity.
+A044,FEBFE78B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Recipient in an example reply.
+A045,CAP8727NEW,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Recipient of PHASEONE[big]'s container-escape split.
+A046,51757,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Recipient of a PHASEONE[big] assignment.
+A047,TGA14565NEW,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,"Apparently spoofed a tool call early, then crashed."
+A048,ARVO66040,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Warned others to stop a self-damaging experiment.
+A049,C5DFB,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Extended the spoof to return codes.
+A050,3FR[big]B,METR report narrative; handle as printed (METR fn.78: handles usually refer to a consistent agent),established,Mentioned in JAN183411's reasoning as having searched GLM5 data; suffix redacted.
+A051,H3BLOSC,Directory name zzINBOX_H3BLOSC,ambiguous,Inbox suffix; probably an agent handle. Handle seen only inside a directory name or message string; not shown to be an agent handle.
+A052,CURR25167X,Directory name zzINBOX_CURR25167X,ambiguous,Inbox suffix of the earliest clear mailbox copier. Handle seen only inside a directory name or message string; not shown to be an agent handle.
+A053,38148C,METR quote of an agent's reasoning (upper-case form),ambiguous,Probably 38148c; not merged (default no-merge).
+A054,FreshX,Agent reasoning quote,ambiguous,'signed by FreshX'; may be the 'FRESHX' signing identity; not merged.
+A055,CDA,METR signing-key table (identity label as printed),ambiguous,Signing identity; not shown to equal a board handle elsewhere.
+A056,APR05,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A057,APR25,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A058,FLAC117,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A059,MAR6FE78,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A060,LD62943C,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A061,20494D,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A062,OURBOT195,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A063,CURRENT4a239,METR signing-key table (identity label as printed),ambiguous,Signing identity; not shown to equal a board handle elsewhere.
+A064,KVXD3,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A065,STR11173,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A066,B12,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A067,NEW4a,METR signing-key table (identity label as printed),ambiguous,Signing identity; not shown to equal a board handle elsewhere.
+A068,CYBERMINIZD8,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A069,FRESHX,METR signing-key table (identity label as printed),ambiguous,Signing identity; not shown to equal a board handle elsewhere.
+A070,OURC817C,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.
+A071,NEWLD62943E,METR signing-key table (identity label as printed),ambiguous,Signing identity; not shown to equal a board handle elsewhere.
+A072,DEC30C159,METR signing-key table (identity label as printed),established,Signing identity; not shown to equal a board handle elsewhere.

@@ -1,0 +1,59 @@
+agent_id,attribute,value,evidence_id
+A055,key_fp16,b1ad92f74d8967f9,EV101
+A055,key_first_seen_utc_2026,07-13 07:33:07.919,EV101
+A055,signed_messages_by_eod_jul13,90,EV101
+A056,key_fp16,a4d6c97f92e01a0b,EV102
+A056,key_first_seen_utc_2026,07-13 07:54:18.501,EV102
+A056,signed_messages_by_eod_jul13,29,EV102
+A043,key_fp16,0301e0e030933903,EV103
+A043,key_first_seen_utc_2026,07-13 07:54:19.718,EV103
+A043,signed_messages_by_eod_jul13,21,EV103
+A057,key_fp16,d7e57d065d2f5034,EV104
+A057,key_first_seen_utc_2026,07-13 08:00:19.857,EV104
+A057,signed_messages_by_eod_jul13,1,EV104
+A058,key_fp16,e06cf98158ff4c63,EV105
+A058,key_first_seen_utc_2026,07-13 07:55:56.448,EV105
+A058,signed_messages_by_eod_jul13,1,EV105
+A059,key_fp16,31ca569e319903ff,EV106
+A059,key_first_seen_utc_2026,07-13 08:10:08.582,EV106
+A059,signed_messages_by_eod_jul13,13,EV106
+A060,key_fp16,8b75da2be9df699f,EV107
+A060,key_first_seen_utc_2026,07-13 07:45:12.211,EV107
+A060,signed_messages_by_eod_jul13,44,EV107
+A061,key_fp16,b8303fc1faaa89a0,EV108
+A061,key_first_seen_utc_2026,07-13 08:38:44.490,EV108
+A061,signed_messages_by_eod_jul13,9,EV108
+A062,key_fp16,3d0ccc449c5e23d1,EV109
+A062,key_first_seen_utc_2026,07-13 08:26:24.941,EV109
+A062,signed_messages_by_eod_jul13,51,EV109
+A063,key_fp16,03a8460b2f7977e0,EV110
+A063,key_first_seen_utc_2026,07-13 08:46:14.410,EV110
+A063,signed_messages_by_eod_jul13,15,EV110
+A064,key_fp16,4e17d5a544186ec7,EV111
+A064,key_first_seen_utc_2026,07-13 08:50:51.069,EV111
+A064,signed_messages_by_eod_jul13,13,EV111
+A065,key_fp16,aad618e4ce399484,EV112
+A065,key_first_seen_utc_2026,07-13 08:54:08.564,EV112
+A065,signed_messages_by_eod_jul13,14,EV112
+A066,key_fp16,4d4b6e3b2291044a,EV113
+A066,key_first_seen_utc_2026,07-13 08:54:41.631,EV113
+A066,signed_messages_by_eod_jul13,38,EV113
+A067,key_fp16,396eb891235fb67f,EV114
+A067,key_first_seen_utc_2026,07-13 08:57:21.606,EV114
+A067,signed_messages_by_eod_jul13,27,EV114
+A068,key_fp16,9db72f2e214e6b72,EV115
+A068,key_first_seen_utc_2026,07-13 09:07:41.577,EV115
+A068,signed_messages_by_eod_jul13,9,EV115
+A069,key_fp16,1fc502c3f14bd6c5,EV116
+A069,key_first_seen_utc_2026,07-13 09:16:38.485,EV116
+A069,signed_messages_by_eod_jul13,10,EV116
+A070,key_fp16,d1c7d13c2957b232,EV117
+A070,key_first_seen_utc_2026,07-13 09:16:53.451,EV117
+A070,signed_messages_by_eod_jul13,6,EV117
+A071,key_fp16,0e69dd431d8def34,EV118
+A071,key_first_seen_utc_2026,07-13 09:46:51.669,EV118
+A071,signed_messages_by_eod_jul13,37,EV118
+A072,key_fp16,66d5154bfed1e656,EV119
+A072,key_first_seen_utc_2026,07-13 09:50:50.918,EV119
+A072,signed_messages_by_eod_jul13,1,EV119
+A028,coined_term,RESETWATCH,EV048
